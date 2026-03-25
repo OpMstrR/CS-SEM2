@@ -1,0 +1,38 @@
+﻿using System;
+using System.IO;
+
+namespace ModulkStetyi
+{
+    class Program
+    {
+
+       
+        static void Main(string[] args)
+        {
+            FileOperations.TextOperation operation = FileOperations.Symbols;
+            Console.Write(" Обери дію : \n 1=UpperCase \n 2=Symbols \n 3=Words : ");
+
+            int choice = int.Parse(Console.ReadLine());
+            switch (choice)
+            {
+                //case (1):
+                //    operation = FileOperations.UpperCase; break;  Не Встиг парс та 
+                case (2):
+                    operation = FileOperations.Symbols; break;
+                case (3):
+                    operation = FileOperations.Words; break;
+
+            }
+
+            string text = "textPD21.txt";
+            var result = operation(text);
+
+
+            Console.WriteLine($"Result: {result}");
+
+            //File.AppendAllText(text, result);
+
+            //Не Встиг
+        }
+    }
+}
